@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-jsp-taglib</artifactId>
+    <name>mutils-jsp-taglib</name>
+    <description>
+        mutils组件中,提供对jsp支持的一个模块。此模块可单独引用。
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tag.version>2.3.3</tag.version>
+    </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>${tag.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+    </dependencies>
+</project>

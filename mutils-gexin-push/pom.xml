@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-gexin-push</artifactId>
+    <name>mutils-gexin-push</name>
+    <description>
+        mutils组件中提供推送消息到app端，该组件不可单独引用至maven依赖。详情请查看GexinPushFunctions
+        官方文档：http://docs.getui.com/
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gexin.version>4.1.0.0</gexin.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-spring-boot-starter</artifactId>
+            <version>${mutils.starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gexin.platform</groupId>
+            <artifactId>gexin-rp-sdk-http</artifactId>
+            <version>${gexin.version}</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <!--	经测试,个推的包并没有被同步到阿里云仓库。如果使用该仓库，那么就不能配置阿里云的mirror在setting文件中, -->
+        <repository>
+            <id>getui-nexus</id>
+            <url>http://mvn.gt.igexin.com/nexus/content/repositories/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

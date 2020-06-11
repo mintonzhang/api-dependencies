@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-aliyun-sms</artifactId>
+    <name>mutils-aliyun-sms</name>
+    <description>
+        mutils组件中提供阿里大鱼短信发送短信、短信使用率等操作，该组件不可单独引用至maven依赖。详情请查看AliyunSmsFunctions
+        官方文档：https://help.aliyun.com/document_detail/101300.html
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aliyuncore.version>4.3.2</aliyuncore.version>
+        <dysmsapi.version>1.1.0</dysmsapi.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-spring-boot-starter</artifactId>
+            <version>${mutils.starter.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>${aliyuncore.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-dysmsapi -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>${dysmsapi.version}</version>
+        </dependency>
+
+
+    </dependencies>
+</project>

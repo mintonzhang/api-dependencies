@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-aliyun-oss</artifactId>
+    <name>mutils-aliyun-oss</name>
+    <description>
+        mutils组件中提供阿里云对象储存(OSS)等操作，该组件不可单独引用至maven依赖。详情请查看AliyunOssUploadFunctions、AliyunOssDownloadFunctions、AliyunOssManageFunctions
+        官方文档：https://help.aliyun.com/document_detail/32008.html
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <oss.version>3.4.0</oss.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-spring-boot-starter</artifactId>
+            <version>${mutils.starter.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${oss.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+</project>

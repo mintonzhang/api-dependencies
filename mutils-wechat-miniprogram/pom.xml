@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-wechat-miniprogram</artifactId>
+    <name>mutils-wechat-miniprogram</name>
+    <description>
+        mutils组件中,提供微信jsapi(公众号)+微信支付模块。
+        官方文档：https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_3
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <bouncycastle.version>1.59</bouncycastle.version>
+        <mutils.wechat-wechatpay-core.version>0.4.0.RELEASE</mutils.wechat-wechatpay-core.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-wechat-wechatpay-core</artifactId>
+            <version>${mutils.wechat-wechatpay-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+    </dependencies>
+</project>

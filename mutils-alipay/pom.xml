@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-alipay</artifactId>
+    <name>mutils-alipay</name>
+    <description>
+        mutils组件中提供支付宝转账、付款、退款等操作，该组件不可单独引用至maven依赖。详情请查看AliPayFunctions
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aliypay.version>4.8.10.ALL</aliypay.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-spring-boot-starter</artifactId>
+            <version>${mutils.starter.version}</version>
+        </dependency>
+        <!-- 支付宝SDK -->
+        <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>${aliypay.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

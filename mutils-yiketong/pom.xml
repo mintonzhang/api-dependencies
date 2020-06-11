@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-yiketong</artifactId>
+    <name>mutils-yiketong</name>
+    <version>0.4.0.RELEASE</version>
+    <description>
+        mutils组件中,提供虚拟号码转发的操作的一个模块。此模块不可单独引用
+        官方文档： http://www.1ketong.com/artical_1.html
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <httpclient.version>4.5.5</httpclient.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-spring-boot-starter</artifactId>
+            <version>${mutils.starter.version}</version>
+        </dependency>
+    </dependencies>
+</project>

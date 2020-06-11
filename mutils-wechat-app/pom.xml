@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.minsin</groupId>
+        <artifactId>mutils-api-manage</artifactId>
+        <version>0.4.0.RELEASE</version>
+    </parent>
+    <artifactId>mutils-wechat-app</artifactId>
+    <name>mutils-wechat-app</name>
+    <description>
+        mutils组件中,提供移动端+微信支付模块。
+        官方文档:https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_1
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mutils.wechat-wechatpay-core.version>0.4.0.RELEASE</mutils.wechat-wechatpay-core.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.minsin</groupId>
+            <artifactId>mutils-wechat-wechatpay-core</artifactId>
+            <version>${mutils.wechat-wechatpay-core.version}</version>
+        </dependency>
+    </dependencies>
+</project>
