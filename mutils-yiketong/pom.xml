@@ -7,11 +7,11 @@
     <parent>
         <groupId>cn.minsin</groupId>
         <artifactId>mutils-api-manage</artifactId>
-        <version>0.4.0.RELEASE</version>
+        <version>0.4.1.RELEASE</version>
     </parent>
     <artifactId>mutils-yiketong</artifactId>
     <name>mutils-yiketong</name>
-    <version>0.4.0.RELEASE</version>
+    <version>0.4.1.RELEASE</version>
     <description>
         mutils组件中,提供虚拟号码转发的操作的一个模块。此模块不可单独引用
         官方文档： http://www.1ketong.com/artical_1.html

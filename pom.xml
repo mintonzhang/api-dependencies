@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>mutils-api-manage</artifactId>
-    <version>0.4.0.RELEASE</version>
+    <version>0.4.1.RELEASE</version>
     <packaging>pom</packaging>
     <groupId>cn.minsin</groupId>
     <name>mutils-api-manage</name>
@@ -64,7 +64,7 @@
         <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
 
-        <mutils.core.version>0.1.6.RELEASE</mutils.core.version>
+        <mutils.core.version>4.0.1.RELEASE</mutils.core.version>
         <mutils.starter.version>0.4.1.RELEASE</mutils.starter.version>
         <!-- api组件最新管理-->
 

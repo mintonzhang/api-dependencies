@@ -1,6 +1,5 @@
 package cn.minsin.qrcode.model;
 
-import cn.minsin.core.annotation.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,33 +14,43 @@ import java.io.InputStream;
 @Setter
 public class LogoModel {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = -4459664046168353683L;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -4459664046168353683L;
 
-    @NotNull("log宽度 不能大于二维码宽度的1/5 否则会无法识别")
-    private Integer width = 100;
+	/**
+	 * log宽度 不能大于二维码宽度的1/5 否则会无法识别
+	 */
+	private Integer width = 100;
 
-    @NotNull("高度 不能大于二维码高度的1/5 否则会无法识别")
-    private Integer height = 100;
+	/**
+	 * 高度 不能大于二维码高度的1/5 否则会无法识别
+	 */
+	private Integer height = 100;
 
-    @NotNull("logo文件")
-    @Setter(AccessLevel.NONE)
-    private InputStream logo;
+	/**
+	 * logo文件
+	 */
+	@Setter(AccessLevel.NONE)
+	private InputStream logo;
 
-    @NotNull("logo边框颜色 默认白色")
-    private Color borderColor = Color.WHITE;
+	/**
+	 * logo边框颜色 默认白色
+	 */
+	private Color borderColor = Color.WHITE;
 
-    @NotNull("是否弧形 默认 true")
-    private Boolean isArc = true;
+	/**
+	 * 是否弧形 默认 true
+	 */
+	private Boolean isArc = true;
 
 
-    public void setLogo(File file) throws FileNotFoundException {
-        this.logo = new FileInputStream(file);
-    }
+	public void setLogo(File file) throws FileNotFoundException {
+		this.logo = new FileInputStream(file);
+	}
 
-    public void setLogo(FileInputStream fileInputStream) {
-        this.logo = fileInputStream;
-    }
+	public void setLogo(FileInputStream fileInputStream) {
+		this.logo = fileInputStream;
+	}
 }

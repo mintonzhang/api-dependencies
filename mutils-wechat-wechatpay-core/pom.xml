@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.minsin</groupId>
         <artifactId>mutils-api-manage</artifactId>
-        <version>0.4.0.RELEASE</version>
+        <version>0.4.1.RELEASE</version>
     </parent>
     <artifactId>mutils-wechat-wechatpay-core</artifactId>
     <name>mutils-wechat-wechatpay-core</name>
@@ -20,11 +20,6 @@
         <wechat.version>0.0.3</wechat.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>cn.minsin</groupId>
-            <artifactId>mutils-spring-boot-starter</artifactId>
-            <version>${mutils.starter.version}</version>
-        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -41,5 +36,22 @@
             <artifactId>jdom</artifactId>
             <version>${jdom.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.64</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>cn.minsin</groupId>-->
+        <!--            <artifactId>mutils-spring-boot-starter</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
+
+    <repositories>
+        <repository>
+            <!-- 默认优先获取阿里云的依赖-->
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
 </project>

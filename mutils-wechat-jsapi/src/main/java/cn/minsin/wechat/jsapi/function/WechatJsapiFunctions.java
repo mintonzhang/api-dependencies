@@ -15,7 +15,6 @@ import cn.minsin.wechat.wechatpay.core.util.Sha1Util;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -79,16 +78,16 @@ public class WechatJsapiFunctions extends WeChatPayFunctions {
      * @throws IOException
      * @throws ClientProtocolException
      */
-    public Map<String, Object> createInitJSConfig(String url, boolean debug, String... functions) throws ClientProtocolException, IOException {
+    public Map<String, Object> createInitJSConfig(String url, boolean debug, String... functions) throws Exception {
 
-        if (functions == null || functions.length == 0) {
-            functions = new String[]{"openLocation", "getLocation", "chooseWXPay"};
-        }
-        String jsapi_ticket = getAccessToken().getJsapi_ticket();
-        // 10位序列号,可以自行调整。
-        String nonce_str = String.valueOf(System.currentTimeMillis());
+	    if (functions == null || functions.length == 0) {
+		    functions = new String[]{"openLocation", "getLocation", "chooseWXPay"};
+	    }
+	    String jsapi_ticket = getAccessToken().getJsapi_ticket();
+	    // 10位序列号,可以自行调整。
+	    String nonce_str = String.valueOf(System.currentTimeMillis());
 
-        Long timestamp = System.currentTimeMillis() / 1000;
+	    Long timestamp = System.currentTimeMillis() / 1000;
 
         SortedMap<String, String> packageParams = new TreeMap<>();
         packageParams.put("noncestr", nonce_str);
@@ -106,22 +105,19 @@ public class WechatJsapiFunctions extends WeChatPayFunctions {
         return returnMap;
     }
 
-    /**
-     * jsapi获取AccessToken用于实现登录
-     *
-     * @throws IOException
-     * @throws ClientProtocolException
-     */
-    public AccessTokenModel getAccessToken() throws ClientProtocolException, IOException {
+	/**
+	 * jsapi获取AccessToken用于实现登录
+	 */
+	public AccessTokenModel getAccessToken() throws Exception {
 
-        CloseableHttpClient instance = HttpClientUtil.getInstance();
-        CloseableHttpResponse response = null;
-        try {
-            String accessTokenUrl = properties.getAccessTokenUrl();
+		CloseableHttpClient instance = HttpClientUtil.getInstance();
+		CloseableHttpResponse response = null;
+		try {
+			String accessTokenUrl = properties.getAccessTokenUrl();
 
-            String jsapiTicketUrl = properties.getJsapiTicketUrl();
+			String jsapiTicketUrl = properties.getJsapiTicketUrl();
 
-            String appid = properties.getAppid();
+			String appid = properties.getAppid();
 
             String appSecret = properties.getAppSecret();
 
@@ -151,26 +147,23 @@ public class WechatJsapiFunctions extends WeChatPayFunctions {
     }
 
     /**
-     * 创建公众号支付的请求参数 小程序将用其发起微信支付
+     * 小程序将发起微信支付
      *
      * @param model 下单时的包装对象
      *              公众号能发起的请求的包装内容
-     * @throws JDOMException
-     * @throws IOException
-     * @throws ParseException
      */
-    public Map<String, String> createJsapiPayParamter(JsapiOrderPayModel model) throws ParseException, IOException, MutilsErrorException {
-        model.setAppid(properties.getAppid());
-        Map<String, String> doXMLParse = super.createUnifiedOrder(model);
-        checkMap(doXMLParse);
-        SortedMap<String, String> sortMap = new TreeMap<>();
-        String appId = doXMLParse.get("appid");
-        sortMap.put("appId", appId);
-        sortMap.put("nonceStr", doXMLParse.get("nonce_str"));
-        sortMap.put("package", "prepay_id=" + doXMLParse.get("prepay_id"));
-        sortMap.put("signType", "MD5");
-        sortMap.put("timeStamp", System.currentTimeMillis() / 1000 + "");
-        sortMap.put("paySign", super.createSign(sortMap));
+    public Map<String, String> createJsapiPayParamter(JsapiOrderPayModel model) throws Exception {
+	    model.setAppid(properties.getAppid());
+	    Map<String, String> doXMLParse = super.createUnifiedOrder(model);
+	    checkMap(doXMLParse);
+	    SortedMap<String, String> sortMap = new TreeMap<>();
+	    String appId = doXMLParse.get("appid");
+	    sortMap.put("appId", appId);
+	    sortMap.put("nonceStr", doXMLParse.get("nonce_str"));
+	    sortMap.put("package", "prepay_id=" + doXMLParse.get("prepay_id"));
+	    sortMap.put("signType", "MD5");
+	    sortMap.put("timeStamp", System.currentTimeMillis() / 1000 + "");
+	    sortMap.put("paySign", super.createSign(sortMap));
         sortMap.put("prepay_id", doXMLParse.get("prepay_id"));
         return sortMap;
 

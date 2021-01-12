@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.minsin</groupId>
         <artifactId>mutils-api-manage</artifactId>
-        <version>0.4.0.RELEASE</version>
+        <version>0.4.1.RELEASE</version>
     </parent>
     <artifactId>mutils-wechat-miniprogram</artifactId>
     <name>mutils-wechat-miniprogram</name>
@@ -18,7 +18,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <bouncycastle.version>1.59</bouncycastle.version>
-        <mutils.wechat-wechatpay-core.version>0.4.0.RELEASE</mutils.wechat-wechatpay-core.version>
+        <mutils.wechat-wechatpay-core.version>0.4.1.RELEASE</mutils.wechat-wechatpay-core.version>
     </properties>
     <dependencies>
         <dependency>

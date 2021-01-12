@@ -1,6 +1,5 @@
 package cn.minsin.wechat.miniprogram.model;
 
-import cn.minsin.core.rule.AbstractModelRule;
 import lombok.Getter;
 import lombok.Setter;
 
