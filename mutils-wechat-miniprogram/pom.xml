@@ -17,7 +17,7 @@
     </description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <bouncycastle.version>1.59</bouncycastle.version>
+        <bouncycastle.version>1.67</bouncycastle.version>
         <mutils.wechat-wechatpay-core.version>0.4.0.RELEASE</mutils.wechat-wechatpay-core.version>
     </properties>
     <dependencies>
