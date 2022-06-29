@@ -16,7 +16,7 @@
         mutils组件中提供 Excel解析、导入等操作，该组件不可单独引用至maven依赖。详情请查看ExcelFunctions
     </description>
     <properties>
-        <poi.version>4.0.0</poi.version>
+        <poi.version>4.1.1</poi.version>
         <mutils.excel.version>0.4.4.RELEASE</mutils.excel.version>
         <mutils.core.version>0.1.7.RELEASE</mutils.core.version>
     </properties>
